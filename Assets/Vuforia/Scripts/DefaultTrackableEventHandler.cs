@@ -167,7 +167,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             else//0.5秒後完成掃描
             {
                 hasFound = false;
-                VuforiaText.text = "掃描完成";
+                VuforiaText.text = "";
                 VuforiaText.color = Color.green;
                 ChangePositionFinished = true;
                 usingSonar = true;

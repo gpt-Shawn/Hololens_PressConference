@@ -27,26 +27,27 @@ public class CallAPI : MonoBehaviour
     public GameObject ScanFrame;
     public GameObject ScanBar;
     public static string PK;
+    public GameObject PathManager;
     [TextArea]
     public string PersonPK;
     public static bool EnableQRScan;
-
+    
 
     //接收 QRCode 資訊
-    string url_QR = "http://210.241.120.82/stsp/ar/qrCode";
+    string url_QR = "http://192.168.0.32:8080/stsp/ar/qrCode";
     string posName = "position";
 
     //回傳撤退狀態
-    string url_retreat = "http://210.241.120.82/stsp/ar/status";
+    string url_retreat = "http://192.168.0.32:8080/stsp/ar/status";
 
     //更新撤退狀態為 0
-    string url_update = "http://210.241.120.82/stsp/ar/update";
+    string url_update = "http://192.168.0.32:8080/stsp/ar/update";
 
     //更新撤退狀態為 1
-    string url_msg = "http://210.241.120.82/stsp/ar/msg";
+    string url_msg = "http://192.168.0.32:8080/stsp/ar/msg";
 
     //上傳角度資訊
-    string upload_angle = "http://210.241.120.82/stsp/ar/orientation";
+    string upload_angle = "http://192.168.0.32:8080/stsp/ar/orientation";
 
 
     void Start()
@@ -281,6 +282,7 @@ public class CallAPI : MonoBehaviour
                 {
                     retreat.SetActive(true);
                     StartCoroutine(UploadUpdate()); //若有撤退指令（值為 1），就開始準備更新撤退指令資料
+                    PathManager.SetActive(true);
                 }
             }
         }
