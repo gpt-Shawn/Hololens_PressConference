@@ -3956,7 +3956,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0592c6d014243ae4b8ba0bef7d399d8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a6845753b85f7845a1ba587b574187c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4618,6 +4618,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 65edac0a11936144ebd3745e25f02ec5, type: 2}
+    - target: {fileID: 400000, guid: 9f98702cf039ce546bd9dc1f1c7c9414, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.116232
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f98702cf039ce546bd9dc1f1c7c9414, type: 3}
 --- !u!4 &1070983091 stripped
@@ -6404,7 +6408,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a027508de1afd9f498c19dd10ea68e23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70b22ac52278e194a9bc118547f7bef5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7276,7 +7280,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 683d5c01f5cd3224fab10e86f4e7c724, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8510b58cd33d7b44e9f4e328aa3721d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
