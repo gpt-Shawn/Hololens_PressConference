@@ -31,9 +31,9 @@ public class PathManager : MonoBehaviour
         if (CreatPathTime >= LifeTime)
         {
             StartPosition = Camera.main.transform.position;
-            StartPosition = new Vector3(StartPosition.x, Office.transform.position.y, StartPosition.z);
+            StartPosition = new Vector3(StartPosition.x, Office.transform.position.y + 0.1f, StartPosition.z);
             TargetPosition = EscapeIcon.transform.position;
-            TargetPosition = new Vector3(TargetPosition.x, Office.transform.position.y, TargetPosition.z);
+            TargetPosition = new Vector3(TargetPosition.x, Office.transform.position.y + 0.1f, TargetPosition.z);
             StartCoroutine(CreatPath());
             CreatPathTime = 0f;
         }
@@ -47,7 +47,7 @@ public class PathManager : MonoBehaviour
         while (Vector3.Distance(PrefabPosition, TargetPosition) > MoveDistance) //如果還沒到終點的話，繼續製造箭頭
         {
             PrefabPosition = Vector3.Lerp(PrefabPosition, TargetPosition, MoveDistance / Vector3.Distance(PrefabPosition, TargetPosition));
-            PrefabPosition = new Vector3(PrefabPosition.x, Office.transform.position.y, PrefabPosition.z);//算出箭頭新增位置
+            PrefabPosition = new Vector3(PrefabPosition.x, Office.transform.position.y + 0.1f, PrefabPosition.z);//算出箭頭新增位置
             var arrow = Instantiate(PathArrow, PrefabPosition, Quaternion.identity);
             arrow.transform.LookAt(EscapeIcon.transform);
             arrow.transform.eulerAngles = new Vector3(90, arrow.transform.eulerAngles.y, 0);

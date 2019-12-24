@@ -6,6 +6,7 @@ public class ScannerEffectDemo : MonoBehaviour
 {
 	public Transform ScannerOrigin;
 	public Material EffectMaterial;
+    public float ScanSped;
 	public static float ScanDistance;
     public static bool _scanning;
 
@@ -16,7 +17,7 @@ public class ScannerEffectDemo : MonoBehaviour
 	{
 		if (_scanning)
 		{
-			ScanDistance += Time.deltaTime * 10;
+			ScanDistance += Time.deltaTime * ScanSped;
         }
         else
         {

@@ -34,20 +34,20 @@ public class CallAPI : MonoBehaviour
     
 
     //接收 QRCode 資訊
-    string url_QR = "http://192.168.0.32:8080/stsp/ar/qrCode";
+    string url_QR = "http://192.168.99.240:8080/stsp/ar/qrCode";
     string posName = "position";
 
     //回傳撤退狀態
-    string url_retreat = "http://192.168.0.32:8080/stsp/ar/status";
+    string url_retreat = "http://192.168.99.240:8080/stsp/ar/status";
 
     //更新撤退狀態為 0
-    string url_update = "http://192.168.0.32:8080/stsp/ar/update";
+    string url_update = "http://192.168.99.240:8080/stsp/ar/update";
 
     //更新撤退狀態為 1
-    string url_msg = "http://192.168.0.32:8080/stsp/ar/msg";
+    string url_msg = "http://192.168.99.240:8080/stsp/ar/msg";
 
     //上傳角度資訊
-    string upload_angle = "http://192.168.0.32:8080/stsp/ar/orientation";
+    string upload_angle = "http://192.168.99.240:8080/stsp/ar/orientation";
 
 
     void Start()
@@ -64,6 +64,7 @@ public class CallAPI : MonoBehaviour
         PersonPK = PersonPK.Replace("\n","");
         PK = PersonPK;
         EnableQRScan = false;
+        StartCoroutine(toggleSonar());
     }
 
 
@@ -108,6 +109,7 @@ public class CallAPI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad3)) //按下開始掃描特效
         {
             StartCoroutine(toggleSonar());
+            Debug.Log("toggleSonar");
         }
         //foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode))) //偵測按了什麼鍵
         //{
@@ -442,11 +444,15 @@ public class CallAPI : MonoBehaviour
 
     IEnumerator toggleSonar() //開啟聲納特效
     {
-        DefaultTrackableEventHandler.usingSonar = false;
+        //DefaultTrackableEventHandler.usingSonar = false;
         //switcher.Toggle();
-        ScannerEffectDemo._scanning = true;
-        yield return new WaitForSeconds(3f);
-        //switcher.Toggle();
-        ScannerEffectDemo._scanning = false;
+        while (true)
+        {
+            ScannerEffectDemo._scanning = true;
+            yield return new WaitForSeconds(3f);
+            //switcher.Toggle();
+            ScannerEffectDemo._scanning = false;
+            yield return null;
+        }
     }
 }
